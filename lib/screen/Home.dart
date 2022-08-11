@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx1_route1/model/User.dart';
 import 'package:getx1_route1/screen/normal/FirstPage.dart';
 
 class Home extends StatelessWidget {
@@ -41,7 +42,8 @@ class Home extends StatelessWidget {
               child: Text("Get.toNamed 라우트, 아규먼트 전달"),
               // 여러가지 종류의 데이터를 넘기고 싶을때
               // https://stackoverflow.com/questions/64906620/flutter-passing-multiple-data-with-getx
-              onPressed: () => Get.toNamed("/NextNamedPage", arguments: ["개남", "스티브"], ), // 정말 무지하게 간단하긴하다.
+              //onPressed: () => Get.toNamed("/NextNamedPage", arguments: [ {"name": "개남", "age": 52} ], ), // 정말 무지하게 간단하긴하다.
+              onPressed: () => Get.toNamed("/NextNamedPage", arguments: [User(name: "스티브", age: 52)], ), // 정말 무지하게 간단하긴하다.
             ),
             ElevatedButton(
               child: Text("Get.toNamed 라우트, 파라미터 전달, (동적 URL) "),
@@ -59,3 +61,4 @@ class Home extends StatelessWidget {
     );
   }
 }
+
